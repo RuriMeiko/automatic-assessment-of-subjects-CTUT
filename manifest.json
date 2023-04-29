@@ -1,0 +1,28 @@
+{
+    "name": "Tự động đánh giá CTUT",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Một tiện ích sẽ tự động đánh giá để xem được điểm ở trang https://sinhvien.ctuet.edu.vn/",
+    "icons": {
+      "16": "icon/icon16.png",
+      "32": "icon/icon32.png",
+      "48": "icon/icon48.png",
+      "128": "icon/icon128.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://sinhvien.ctuet.edu.vn/*"],
+          "js": ["popup.js"]
+        }
+      ],
+    "host_permissions": [
+          "*://sinhvien.ctuet.edu.vn/*"
+      ],
+    "permissions": [
+    "cookies",
+    "tabs"    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon/icon16.png"
+      }
+}
