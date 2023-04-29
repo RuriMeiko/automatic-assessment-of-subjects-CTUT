@@ -1,6 +1,6 @@
 {
     "name": "Tự động đánh giá CTUT",
-    "version": "1.0",
+    "version": "16.25",
     "manifest_version": 3,
     "description": "Một tiện ích sẽ tự động đánh giá để xem được điểm ở trang https://sinhvien.ctuet.edu.vn/",
     "icons": {
