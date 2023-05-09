@@ -337,7 +337,6 @@ section#accueil header>h1 {
   width: 80%;
   position: absolute;
   font-size: 12px;
-  font-style: oblique !important;
   color: #726666;
   opacity: 0; 
   display: flex;

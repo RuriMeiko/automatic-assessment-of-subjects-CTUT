@@ -2,12 +2,28 @@ document.addEventListener('DOMContentLoaded', function () {
     var saveCookieButton = document.getElementById('log-cookie-button');
     const button_info = document.querySelector('#more-BM button');
     const span_info = document.querySelector('#BM-said');
+    let count = 0;
     button_info.addEventListener('mouseenter', () => {
         span_info.style.opacity = '1';
+        count++;
+        if (count >5) {   
+            span_info.style.paddingTop = '30px';
+            span_info.innerHTML='Wa đủ gòi 🥺';
+        }
+        if (count >10) {   
+            span_info.style.paddingTop = '30px';
+            span_info.innerHTML='jztr, mệc z 🙂';
+        }
+        if (count >20) {   
+            span_info.style.paddingTop = '30px';
+            span_info.style.fontSize = '30px';
+            span_info.innerHTML='😏';
+        }
     });
     button_info.addEventListener('mouseleave', () => {
         span_info.style.opacity = '0';
     });
+  
 
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, async tabs => {
         let url = tabs[0].url;
