@@ -333,3 +333,46 @@ section#accueil header>h1 {
   background-color: #f96457;
   color: #fff;
 }
+#BM-said{
+  width: 80%;
+  position: absolute;
+  font-size: 12px;
+  opacity: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 30;
+  bottom: 110px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #f2dde6;
+  border: none;
+  border-radius: 2%;
+  padding: 10px;
+  transition: 0.5s;
+  padding-bottom: 50px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 8% 76%, 0 100%, 0% 75%);  
+}
+#more-BM:hover #BM-said{
+  opacity: 1;
+}
+#more-BM span button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  z-index: 30;
+  bottom: 20px;
+  left: 7%;
+  transform: translate(-50%, 50%);
+  background-color: #f2dde6;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.5s;
+  color: #726666;
+}

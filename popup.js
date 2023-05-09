@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             var button = document.getElementById('log-cookie-button');
             button.remove();
-            await add_debug('This feature only works on https://sinhvien.ctuet.edu.vn');
+            await add_debug('This feature only works on <a href="https://sinhvien.ctuet.edu.vn">https://sinhvien.ctuet.edu.vn</a>');
         }
     });
 });
@@ -43,7 +43,7 @@ async function add_debug(text, isName = false) {
             print_debug.style.textAlign = 'center';
             print_debug.style.fontWeight = 'bold';
             print_debug.style.fontSize = '16px';
-        } else if (text == 'This feature only works on https://sinhvien.ctuet.edu.vn') {
+        } else if (text == 'This feature only works on <a href="https://sinhvien.ctuet.edu.vn">https://sinhvien.ctuet.edu.vn</a>') {
             print_debug.style.textAlign = 'center';
         };
         table_debug.appendChild(print_debug);
@@ -51,6 +51,14 @@ async function add_debug(text, isName = false) {
         resolve();
     });
 }
+
+document.addEventListener("click", (event) => {
+    if (event.target.matches("a[href^='http']")) {
+      event.preventDefault();
+      chrome.tabs.create({ url: event.target.href });
+    }
+  });
+  
 
 async function get_nummber_id_mon_hoc(cookies) {
     const url = 'https://sinhvien.ctuet.edu.vn/ket-qua-hoc-tap.html';
