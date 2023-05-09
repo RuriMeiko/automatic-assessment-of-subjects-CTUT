@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     var saveCookieButton = document.getElementById('log-cookie-button');
+    const button_info = document.querySelector('#more-BM button');
+    const span_info = document.querySelector('#BM-said');
+    button_info.addEventListener('mouseenter', () => {
+        span_info.style.opacity = '1';
+    });
+    button_info.addEventListener('mouseleave', () => {
+        span_info.style.opacity = '0';
+    });
+
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, async tabs => {
         let url = tabs[0].url;
         if (url.includes('https://sinhvien.ctuet.edu.vn')) {
@@ -11,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (cookies.length > 0) {
                             resolve(cookies[0].value);
                         } else {
-                            add_debug('Không tìm thấy cookies, hãy đăng nhập, nếu đã đăng nhập mà vẫn hiện lỗi, liên hệ: https://t.me/rurimeiko');
+                            add_debug('Không tìm thấy cookies, hãy đăng nhập, nếu đã đăng nhập mà vẫn hiện lỗi, liên hệ: <a href="https://t.me/rurimeiko">https://t.me/rurimeiko</a>');
                             reject(new Error('Không tìm thấy cookies, hãy đăng nhập, nếu đã đăng nhập mà vẫn hiện lỗi, liên hệ: https://t.me/rurimeiko'));
                         }
                     })
@@ -180,3 +189,9 @@ async function sendRequests(cookie) {
         await add_debug('Đã xong, cậu có thể tắt tiện ích lúc này');
     }
 }
+
+
+
+
+
+
